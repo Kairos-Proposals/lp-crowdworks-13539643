@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kairosからのご提案 | クラフトマンスタンダード様 コーポレートサイト制作</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Antique+B1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F2EBDC;
+    --cream-light:#FBF8F2;
+    --indigo:#2E4057;
+    --indigo-deep:#1E2C3C;
+    --ocher:#C68B3C;
+    --forest:#566246;
+    --ink:#2B2117;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.8;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{
+    font-family:'Zen Maru Gothic',sans-serif;
+    color:var(--indigo-deep);
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px;}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:
+      repeating-linear-gradient(0deg, rgba(46,64,87,0.06) 0px, rgba(46,64,87,0.06) 1px, transparent 1px, transparent 40px),
+      repeating-linear-gradient(90deg, rgba(46,64,87,0.06) 0px, rgba(46,64,87,0.06) 1px, transparent 1px, transparent 40px),
+      linear-gradient(160deg, var(--cream-light) 0%, var(--cream) 55%, #e9ddc3 100%);
+    overflow:hidden;
+    padding:120px 0 80px;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    right:-120px;
+    top:-120px;
+    width:480px;
+    height:480px;
+    border-radius:50%;
+    background:
+      repeating-radial-gradient(circle at center, transparent 0 18px, rgba(198,139,60,0.18) 19px 21px, transparent 22px 40px);
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    left:-100px;
+    bottom:-140px;
+    width:380px;
+    height:380px;
+    border-radius:50%;
+    border:2px dashed rgba(46,64,87,0.25);
+  }
+  .hero-inner{position:relative;z-index:2;}
+  .kairos-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--indigo-deep);
+    color:var(--cream-light);
+    font-size:0.78rem;
+    letter-spacing:0.15em;
+    padding:8px 18px;
+    border-radius:999px;
+    margin-bottom:28px;
+  }
+  .kairos-tag span.dot{
+    width:7px;height:7px;background:var(--ocher);border-radius:50%;display:inline-block;
+  }
+  .hero h1{
+    font-size:clamp(2.1rem, 5vw, 3.4rem);
+    font-weight:900;
+    line-height:1.5;
+    max-width:760px;
+    margin-bottom:28px;
+  }
+  .hero h1 .accent{
+    color:var(--ocher);
+    position:relative;
+  }
+  .hero p.lead{
+    font-size:1.05rem;
+    max-width:560px;
+    color:#4a4033;
+    margin-bottom:40px;
+  }
+  .hero-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .hero-meta .meta-box{
+    background:var(--cream-light);
+    border:1px solid rgba(46,64,87,0.18);
+    border-radius:10px;
+    padding:12px 20px;
+    font-size:0.85rem;
+  }
+  .hero-meta .meta-box b{
+    display:block;
+    font-family:'Zen Maru Gothic',sans-serif;
+    font-size:1rem;
+    color:var(--indigo);
+  }
+
+  /* ===== SECTION COMMON ===== */
+  section{padding:100px 0;position:relative;}
+  .section-label{
+    font-size:0.78rem;
+    letter-spacing:0.2em;
+    color:var(--ocher);
+    font-weight:700;
+    margin-bottom:14px;
+    display:block;
+  }
+  .section-title{
+    font-size:clamp(1.6rem, 3.5vw, 2.3rem);
+    margin-bottom:50px;
+    font-weight:900;
+  }
+
+  /* ===== UNDERSTANDING ===== */
+  .understand{
+    background:var(--indigo-deep);
+    color:var(--cream-light);
+  }
+  .understand .section-title{color:var(--cream-light);}
+  .understand .section-label{color:var(--ocher);}
+  .understand-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:start;
+  }
+  .understand-card{
+    background:rgba(251,248,242,0.06);
+    border:1px solid rgba(251,248,242,0.18);
+    border-radius:16px;
+    padding:32px;
+  }
+  .understand-card h3{
+    color:var(--cream-light);
+    font-size:1.1rem;
+    margin-bottom:16px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .understand-card h3::before{
+    content:"";
+    width:10px;height:10px;
+    background:var(--ocher);
+    display:inline-block;
+    transform:rotate(45deg);
+  }
+  .understand-card p{
+    color:#d8d2c3;
+    font-size:0.95rem;
+  }
+  .ref-note{
+    margin-top:36px;
+    font-size:0.88rem;
+    color:#c9c2b0;
+    border-left:3px solid var(--ocher);
+    padding-left:16px;
+  }
+
+  /* ===== VALUE ===== */
+  .value-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+  }
+  .value-card{
+    background:var(--cream-light);
+    border-radius:18px;
+    padding:36px 28px;
+    position:relative;
+    border:1px solid rgba(43,33,23,0.08);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .value-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 16px 30px rgba(46,64,87,0.15);
+  }
+  .value-num{
+    font-family:'Zen Maru Gothic',sans-serif;
+    font-size:0.8rem;
+    color:#fff;
+    background:var(--indigo);
+    width:34px;height:34px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:20px;
+    font-weight:700;
+  }
+  .value-card h3{
+    font-size:1.08rem;
+    margin-bottom:12px;
+  }
+  .value-card p{
+    font-size:0.92rem;
+    color:#4a4033;
+  }
+  .value-card.accent{
+    background:linear-gradient(145deg, var(--ocher), #b67a2c);
+    color:#fff;
+    border:none;
+  }
+  .value-card.accent h3,.value-card.accent p{color:#fff;}
+  .value-card.accent .value-num{background:#fff;color:var(--ocher);}
+
+  /* ===== FLOW ===== */
+  .flow{background:var(--cream);}
+  .timeline{
+    position:relative;
+    margin-top:40px;
+    padding-left:36px;
+    border-left:2px dashed rgba(46,64,87,0.35);
+  }
+  .flow-step{
+    position:relative;
+    padding-bottom:48px;
+  }
+  .flow-step:last-child{padding-bottom:0;}
+  .flow-step::before{
+    content:"";
+    position:absolute;
+    left:-44px;
+    top:2px;
+    width:16px;height:16px;
+    background:var(--cream);
+    border:3px solid var(--indigo);
+    border-radius:50%;
+  }
+  .flow-step .flow-day{
+    font-size:0.78rem;
+    color:var(--ocher);
+    font-weight:700;
+    letter-spacing:0.08em;
+    margin-bottom:6px;
+  }
+  .flow-step h3{
+    font-size:1.1rem;
+    margin-bottom:8px;
+  }
+  .flow-step p{
+    font-size:0.92rem;
+    color:#4a4033;
+    max-width:620px;
+  }
+  .flow-note{
+    margin-top:30px;
+    background:var(--cream-light);
+    border:1px dashed rgba(46,64,87,0.3);
+    border-radius:12px;
+    padding:20px 24px;
+    font-size:0.88rem;
+    color:#4a4033;
+  }
+
+  /* ===== CLOSING ===== */
+  .closing{
+    background:
+      radial-gradient(circle at 20% 20%, rgba(198,139,60,0.25), transparent 40%),
+      linear-gradient(135deg, var(--indigo-deep), #233447);
+    color:var(--cream-light);
+    text-align:center;
+    padding:110px 0;
+  }
+  .closing .section-label{color:var(--ocher);}
+  .closing h2{
+    color:var(--cream-light);
+    font-size:clamp(1.6rem,4vw,2.4rem);
+    margin-bottom:22px;
+  }
+  .closing p{
+    max-width:560px;
+    margin:0 auto 40px;
+    color:#d8d2c3;
+    font-size:0.98rem;
+  }
+  .cta-btn{
+    display:inline-block;
+    background:var(--ocher);
+    color:#fff;
+    font-weight:700;
+    padding:18px 48px;
+    border-radius:999px;
+    font-family:'Zen Maru Gothic',sans-serif;
+    font-size:1.05rem;
+    letter-spacing:0.05em;
+    box-shadow:0 10px 24px rgba(198,139,60,0.35);
+    transition:transform .2s ease;
+  }
+  .cta-btn:hover{transform:translateY(-3px);}
+  .closing-foot{
+    margin-top:50px;
+    font-size:0.8rem;
+    color:#8d93a0;
+    letter-spacing:0.08em;
+  }
+
+  footer{
+    background:var(--indigo-deep);
+    color:#8d93a0;
+    text-align:center;
+    padding:24px 0;
+    font-size:0.75rem;
+    letter-spacing:0.08em;
+  }
+
+  @media (max-width:800px){
+    .understand-grid{grid-template-columns:1fr;}
+    .value-grid{grid-template-columns:1fr;}
+    .hero{padding:140px 0 70px;}
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="kairos-tag"><span class="dot"></span>Kairos からのご提案 — クラフトマンスタンダード 様</div>
+    <h1>たたき台を、<br>ずっと使い続けられる<br class="brhide"><span class="accent">「標準装備」</span>に仕上げます。</h1>
+    <p class="lead">AIで描いた設計図を、職人の手で丁寧に組み上げる。ファミリー層に親しまれるコーポレートサイトを、WordPressという確かな土台の上に制作いたします。</p>
+    <div class="hero-meta">
+      <div class="meta-box"><b>WordPress 新規制作</b>コーポレートサイト</div>
+      <div class="meta-box"><b>1週間〜10日</b>想定納期</div>
+      <div class="meta-box"><b>20〜30代ファミリー</b>想定ターゲット</div>
+    </div>
+  </div>
+</section>
+
+<section class="understand">
+  <div class="wrap">
+    <span class="section-label">01 / UNDERSTANDING</span>
+    <h2 class="section-title">ご依頼内容、しっかり拝見しました。</h2>
+    <div class="understand-grid">
+      <div class="understand-card">
+        <h3>AIのたたき台を「製品」にする</h3>
+        <p>すでにお持ちのAI制作のたたき台を土台に、情報設計とレイアウトを整理。見やすさ・読みやすさを一段引き上げ、実際に運用できるWordPressサイトとして組み上げます。</p>
+      </div>
+      <div class="understand-card">
+        <h3>ファミリー層に伝わる「親しみやすさ」</h3>
+        <p>参考にいただいた雰囲気を踏まえ、硬すぎない丸みのある書体・余白・色づかいで、20〜30代のご家族に自然と受け入れられるトーンに仕上げます。</p>
+      </div>
+      <div class="understand-card">
+        <h3>「クラフトマンスタンダード」という名に込められた品質感</h3>
+        <p>御社名が示す“職人の標準”という信頼感を、サイトの佇まいにも反映。奇をてらわず、誠実で長く見ても飽きのこないデザインをご提案します。</p>
+      </div>
+      <div class="understand-card">
+        <h3>短納期でも妥協しない体制</h3>
+        <p>1週間〜10日というスケジュールに対応できるよう、初動のヒアリングから逆算した進行プランをあらかじめご用意してご提案いたします。</p>
+      </div>
+    </div>
+    <p class="ref-note">参考サイトのような、やわらかく親しみのあるトーン＆マナーを基準に、御社らしい色・形を丁寧にすり合わせていきます。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="section-label">02 / VALUE</span>
+    <h2 class="section-title">Kairosがご提供できること</h2>
+    <div class="value-grid">
+      <div class="value-card accent">
+        <div class="value-num">01</div>
+        <h3>たたき台のブラッシュアップ</h3>
+        <p>既存デザインの良さを活かしつつ、視認性・情報の優先順位を整理し「伝わるデザイン」へ再構成します。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">02</div>
+        <h3>WordPress構築一式</h3>
+        <p>テーマ設計からカスタマイズまで、更新しやすい管理画面と合わせて丁寧に構築いたします。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">03</div>
+        <h3>スマホ最適化</h3>
+        <p>ファミリー層のスマホ閲覧を想定し、片手で見やすいレイアウト・文字サイズに調整します。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">04</div>
+        <h3>短納期対応フロー</h3>
+        <p>ヒアリング〜納品までの工程をあらかじめ設計し、1週間〜10日の中でも品質を落とさず進行します。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">05</div>
+        <h3>納品後も安心のご相談</h3>
+        <p>公開後の文言修正や軽微な調整など、運用開始直後のご不安にも柔軟に対応いたします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="flow">
+  <div class="wrap">
+    <span class="section-label">03 / SCHEDULE</span>
+    <h2 class="section-title">進め方のイメージ</h2>
+    <div class="timeline">
+      <div class="flow-step">
+        <div class="flow-day">DAY 1 - 2</div>
+        <h3>ヒアリング・方向性すり合わせ</h3>
+        <p>たたき台と参考サイトを拝見しながら、配色・トーン・優先コンテンツを確認。方向性を固めます。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-day">DAY 3 - 5</div>
+        <h3>デザイン調整・実装開始</h3>
+        <p>デザインを見やすく整えながら、WordPressでの実装を並行して進行します。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-day">DAY 6 - 8</div>
+        <h3>全体組み上げ・ご確認</h3>
+        <p>全ページを組み上げ、実機・スマホでのご確認をいただきながら微調整を行います。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-day">DAY 9 - 10</div>
+        <h3>最終調整・納品</h3>
+        <p>文言・表示崩れなど最終チェックを行い、サイトを納品いたします。</p>
+      </div>
+    </div>
+    <div class="flow-note">※実際の進行は内容確定後にあらためてご相談のうえ決定いたします。スケジュールはご相談に応じて柔軟に調整可能です。</div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <span class="section-label">CONTACT</span>
+    <h2>まずは一度、お話しさせてください。</h2>
+    <p>たたき台を拝見した上で、具体的なお見積もりとスケジュールをご提案いたします。簡単な自己紹介とあわせて、お気軽にメッセージをお送りください。</p>
+    <a href="#" class="cta-btn">Kairosに相談してみる</a>
+    <div class="closing-foot">KAIROS — Web制作・システム開発チーム</div>
+  </div>
+</section>
+
+<footer>
+  © Kairos / Web制作・システム開発チーム
+</footer>
+
+</body>
+</html>
